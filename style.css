@@ -28,6 +28,7 @@ main {
     height: 100%;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .main-content {
@@ -42,15 +43,11 @@ main {
 .main-content h1 {
     font-size: 4em;
     margin: 0;
-
-    animation: land-enter 1.25s ease;
 }
 
 .main-content p {
     font-size: 1.5em;
     margin: 0;
-
-    animation: fade-enter 2.5s ease;
 }
 
 .main-content div {
@@ -86,7 +83,36 @@ main {
     border-color: var(--primary-hover);
 }
 
+svg {
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    position: absolute;
+}
+
+#ping-1 {
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    animation: ping 2s ease;
+    stroke-width: 1;
+    opacity: 0%;
+}
+
+#ping-2 {
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    animation: ping 2s ease 0.2s;
+    stroke-width: 1;
+    opacity: 0%;
+}
+
 /* Zip screen */
+
+#zip {
+    position: relative;
+}
 
 #zip .spacer {
     height: 40vh;
@@ -94,6 +120,14 @@ main {
 
 #zip #form-div {
     animation: fade-enter 2.5s ease;
+}
+
+#zip h1 {
+    /* animation: land-enter 1.25 ease 1s; */
+}
+
+#zip p {
+    /* animation: fade-enter 2.5s ease 1s; */
 }
 
 /* Keyframes */
@@ -121,5 +155,19 @@ main {
 
     100% {
         opacity: 100%;
+    }
+}
+
+@keyframes ping {
+    0% {
+        r: 0;
+        opacity: 100%;
+        stroke: var(--primary-hover);
+    }
+
+    100% {
+        r: 100;
+        opacity: 100%;
+        stroke: var(--primary-hover);
     }
 }
