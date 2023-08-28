@@ -42,11 +42,15 @@ main {
 .main-content h1 {
     font-size: 4em;
     margin: 0;
+
+    animation: land-enter 1.25s ease;
 }
 
 .main-content p {
     font-size: 1.5em;
     margin: 0;
+
+    animation: fade-enter 2.5s ease;
 }
 
 .main-content div {
@@ -86,4 +90,36 @@ main {
 
 #zip .spacer {
     height: 40vh;
+}
+
+#zip #form-div {
+    animation: fade-enter 2.5s ease;
+}
+
+/* Keyframes */
+
+@keyframes land-enter {
+    0% {
+        transform: translateY(-75%);
+        opacity: 0%;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 100%;
+    }
+}
+
+@keyframes fade-enter {
+    0% {
+        opacity: 0%;
+    }
+
+    50% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }
