@@ -1,11 +1,12 @@
 :root {
     --primary: steelblue;
     --light: rgb(255, 255, 255);
-    --primary-hover: rgb(120, 189, 246);
+    --primary-hover: rgb(158, 193, 222);
 }
 
 body {
     font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+    height: 100vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -20,6 +21,36 @@ header {
     width: 100%;
     height: 2em;
     background-color: var(--primary);
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main-content {
+    width: 100%;
+    margin: 3em;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+}
+
+.main-content h1 {
+    font-size: 4em;
+    margin: 0;
+}
+
+.main-content p {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.main-content div {
+    padding: 0.5em 0;
 }
 
 .form-field {
@@ -49,4 +80,10 @@ header {
 .form-button:hover {
     background-color: var(--primary-hover);
     border-color: var(--primary-hover);
+}
+
+/* Zip screen */
+
+#zip .spacer {
+    height: 40vh;
 }
