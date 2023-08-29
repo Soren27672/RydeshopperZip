@@ -1,11 +1,17 @@
 :root {
-    --primary: steelblue;
+    --primary: #b20a0b;
     --light: rgb(255, 255, 255);
-    --primary-hover: rgb(158, 193, 222);
+    --primary-hover: #e23333;
+    --car-fade-duration: 1s;
 }
 
+@font-face {
+    font-family: Montserrat;
+    src: url(./Resources/Montserrat-VariableFont_wght.ttf);
+  }
+
 body {
-    font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+    font-family: Montserrat, "sans serif";
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -20,7 +26,19 @@ header {
     font-size: 2.5em;
     width: 100%;
     height: 2em;
-    background-color: var(--primary);
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+#header-div {
+    display: flex;
+    align-items: center;
+    margin: 0 0.25em;
+}
+
+#logo-svg {
+    height: 1em;
 }
 
 main {
@@ -83,19 +101,19 @@ main {
     border-color: var(--primary-hover);
 }
 
-svg {
+#zip-svg {
     width: 100vw;
     height: 100vh;
     z-index: -1;
     position: absolute;
+    top: -12em;
 }
 
 #ping-1 {
     position: absolute;
     right: 1em;
     bottom: 1em;
-    animation: ping 2s ease;
-    stroke-width: 1;
+    animation: ping 2s ease forwards;
     opacity: 0%;
 }
 
@@ -103,9 +121,60 @@ svg {
     position: absolute;
     right: 1em;
     bottom: 1em;
-    animation: ping 2s ease 0.2s;
-    stroke-width: 1;
+    animation: ping 2s ease 0.2s forwards;
     opacity: 0%;
+}
+
+.car {
+    transform-origin: center;
+    transform-box: fill-box;
+    opacity: 0%;
+}
+
+#car-1 {
+
+    animation: fade-enter var(--car-fade-duration) ease 0.1s forwards,
+    zoom-20 2.1s ease 0.1s forwards;
+}
+
+#car-2 {
+    animation: fade-enter var(--car-fade-duration) ease 0.2s forwards,
+    zoom-20 2s ease 0.1s forwards;
+}
+
+#car-3 {
+    animation: fade-enter var(--car-fade-duration) ease 0.3s forwards,
+    zoom-10 1.9s ease 0.1s forwards;
+}
+
+#car-4 {
+    animation: fade-enter var(--car-fade-duration) ease 0.4s forwards,
+    zoom-10 1.8s ease 0.1s forwards;
+}
+
+#car-5 {
+    animation: fade-enter var(--car-fade-duration) ease 0.5s forwards,
+    zoom-10 1.7s ease 0.1s forwards;
+}
+
+#car-6 {
+    animation: fade-enter var(--car-fade-duration) ease 1.2s forwards,
+    zoom-5 1s ease 0.1s forwards;
+}
+
+#car-7 {
+    animation: fade-enter var(--car-fade-duration) ease 0.7s forwards,
+    zoom-5 1.5s ease 0.1s forwards;
+}
+
+#car-8 {
+    animation: fade-enter var(--car-fade-duration) ease 0.8s forwards,
+    zoom-5 1.4s ease 0.1s forwards;
+}
+
+#car-9 {
+    animation: fade-enter var(--car-fade-duration) ease 0.8s forwards,
+    zoom-5 1.4s ease 0.1s forwards;
 }
 
 /* Zip screen */
@@ -119,15 +188,18 @@ svg {
 }
 
 #zip #form-div {
-    animation: fade-enter 2.5s ease;
+    opacity: 0%;
+    animation: fade-enter 1.5s ease 2.25s forwards;
 }
 
 #zip h1 {
-    /* animation: land-enter 1.25 ease 1s; */
+    opacity: 0%;
+    animation: land-enter 1.25s ease 1s forwards;
 }
 
 #zip p {
-    /* animation: fade-enter 2.5s ease 1s; */
+    opacity: 0%;
+    animation: fade-enter 1.5s ease 2.25s forwards;
 }
 
 /* Keyframes */
@@ -149,10 +221,6 @@ svg {
         opacity: 0%;
     }
 
-    50% {
-        opacity: 0%;
-    }
-
     100% {
         opacity: 100%;
     }
@@ -166,8 +234,35 @@ svg {
     }
 
     100% {
-        r: 100;
-        opacity: 100%;
+        r: 600;
+        opacity: 3.75%;
         stroke: var(--primary-hover);
+    }
+}
+
+@keyframes zoom-20 {
+    0% {
+        transform: scale(100%);
+    }
+    100% {
+        transform: scale(120%);
+    }
+}
+
+@keyframes zoom-10 {
+    0% {
+        transform: scale(100%);
+    }
+    100% {
+        transform: scale(110%);
+    }
+}
+
+@keyframes zoom-5 {
+    0% {
+        transform: scale(100%);
+    }
+    100% {
+        transform: scale(105%);
     }
 }
