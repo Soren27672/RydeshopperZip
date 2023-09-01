@@ -72,7 +72,6 @@ main {
 
 .slide {
     width: 100%;
-    height: max-content;
     overflow-x: hidden;
     position: relative;
 }
@@ -142,8 +141,17 @@ main {
 .background-svg {
     position: relative;
     z-index: -1;
-    width: clamp(50em, 125vw, 80em);
-    height: clamp(50em, 125vw, 80em);
+    padding-top: 2rem;
+    left: calc(-8rem + 25vw);
+}
+
+@media only screen and (min-width: 600px) {
+    .background-svg {
+        height: 1200px;
+        width: 1200px;
+        top: -15rem;
+        left: calc(-15rem + 35vw);
+    }
 }
 
 #ping-1 {
