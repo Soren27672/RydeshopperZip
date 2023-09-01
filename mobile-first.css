@@ -1,0 +1,54 @@
+:root {
+    --primary: #b20a0b;
+    --light: rgb(255, 255, 255);
+    --primary-hover: #e23333;
+    --car-fade-duration: 1s;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+    background-color: black;
+}
+
+nav {
+    display: flex;
+}
+
+#logo-anchor {
+    display: flex;
+    align-items: center;
+}
+
+#logo-anchor svg {
+    height: 1em;
+}
+
+main {
+    margin: 0;
+    max-width: 100%;
+}
+
+.slide {
+    max-width: 100vw;
+    overflow: hidden;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.background-svg {
+    position: absolute;
+}
