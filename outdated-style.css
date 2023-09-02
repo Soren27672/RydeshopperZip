@@ -8,50 +8,37 @@
 @font-face {
     font-family: Montserrat;
     src: url(./Resources/Montserrat-VariableFont_wght.ttf);
-}
-
-html {
-    height: -webkit-fill-available;
-}
+  }
 
 body {
+    font-family: Montserrat, "sans serif";
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 100%;
-    height: -webkit-fill-available;
-    margin: 0;
-    font-family: Montserrat, "sans serif";
-}
-
-* {
-    overflow: hidden;
 }
 
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
+    font-size: 2.5em;
     width: 100%;
+    height: 2em;
     background-color: black;
-}
-
-nav {
     display: flex;
+    align-items: center;
 }
 
-nav > a {
-    padding: 0 1em;
-
-    color: var(--light);
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-nav > a:hover {
-    background-color: #2e2e2e;
-    text-decoration: underline;
+#header-div {
+    height: inherit;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 0 0.5em ;
 }
 
 #logo-anchor {
@@ -59,53 +46,76 @@ nav > a:hover {
     align-items: center;
 }
 
-#logo-anchor svg {
-    height: 1.5em;
-    margin: 0 1em;
+#logo-svg {
+    height: 1em;
+}
+
+nav {
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--light);
+    height: inherit;
+    display: flex;
+    align-items: center;
+    padding: 0em 0.5em;
+    margin: 0;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+    padding: 0em 0.5em;
+    margin: 0;
+    background-color: #2e2e2e;
+    transition: 0.2s;
+}
+
+nav p {
+    font-size: 0.5em;
+    text-decoration: inherit;
+    font-weight: 100;
+    margin: 0;
+    color: var(--light);
 }
 
 main {
-    margin: 0;
     width: 100%;
-    overflow-x: hidden;
-}
-
-.slide {
-    width: 100%;
-    overflow-x: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
     position: relative;
 }
 
-.content {
-    position: absolute;
+.main-content {
+    width: 100%;
+    margin: 3em;
+
     display: flex;
     flex-direction: column;
     row-gap: 1em;
-    width: calc(100% - 4em);
-    padding: 2em;
 }
 
-.content h1 {
-    font-size: 3em;
+.main-content h1 {
+    font-size: 4em;
     margin: 0;
-    opacity: 0%;
-    animation: land-enter 1.25s ease 1s forwards;
 }
 
-.content p {
+.main-content p {
+    font-size: 1.5em;
     margin: 0;
-    font-size: 1.25em;
-    opacity: 0%;
-    animation: fade-enter 1.5s ease 2.25s forwards;
 }
 
-.content form {
-    opacity: 0%;
-    animation: fade-enter 1.5s ease 2.25s forwards;
+.main-content div {
+    padding: 0.5em 0;
 }
 
 .form-field {
-    font-size: 1.25em;
+    font-size: 1.5em;
     width: 8ch;
     text-align: center;
 
@@ -114,14 +124,9 @@ main {
     border-radius: 0.5em;
 }
 
-.form-field:focus {
-    border: solid var(--primary-hover) 0.15em;
-    transition: 0.3s;
-}
-
 .form-button {
-    font-size: 1.25em;
-    width: 4ch;
+    font-size: 1.5em;
+    width: 8ch;
     text-align: center;
 
     padding: 0.1em;
@@ -138,19 +143,17 @@ main {
     border-color: var(--primary-hover);
 }
 
-.background-svg {
-    position: relative;
+#zip-svg {
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
-    padding-top: 2rem;
-    left: calc(-8rem + 25vw);
+    position: absolute;
+    top: -12em;
 }
 
-@media only screen and (min-width: 600px) {
-    .background-svg {
-        height: 1200px;
-        width: 1200px;
-        top: -15rem;
-        left: calc(-15rem + 35vw);
+@media only screen and (max-width: 800px) {
+    #zip-svg {
+        top: 5em;
     }
 }
 
@@ -220,6 +223,31 @@ main {
 #car-9 {
     animation: fade-enter var(--car-fade-duration) ease 0.8s forwards,
     zoom-5 1.4s ease 0.1s forwards;
+}
+
+/* Zip screen */
+
+#zip {
+    position: relative;
+}
+
+#zip .spacer {
+    height: 40vh;
+}
+
+#zip #form-div {
+    opacity: 0%;
+    animation: fade-enter 1.5s ease 2.25s forwards;
+}
+
+#zip h1 {
+    opacity: 0%;
+    animation: land-enter 1.25s ease 1s forwards;
+}
+
+#zip p {
+    opacity: 0%;
+    animation: fade-enter 1.5s ease 2.25s forwards;
 }
 
 /* Keyframes */
