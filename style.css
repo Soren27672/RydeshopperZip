@@ -124,6 +124,7 @@ main {
 
 .content {
     position: absolute;
+    font-size: 0.8rem;
     display: flex;
     flex-direction: column;
     row-gap: 1em;
@@ -148,6 +149,12 @@ main {
 .content form {
     opacity: 0%;
     animation: fade-enter 1.5s ease 2.25s forwards;
+}
+
+@media only screen and (min-width: 501px) {
+    .content {
+        font-size: 1rem;
+    }
 }
 
 .form-field {
